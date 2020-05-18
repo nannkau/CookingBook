@@ -6,10 +6,20 @@ import android.widget.ImageView;
 public class Food {
     private int photo;
     private String link;
+    private String name;
 
-    public Food(int photo, String link) {
+    public Food(int photo, String link,String name) {
         this.photo = photo;
         this.link = link;
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getPhoto() {

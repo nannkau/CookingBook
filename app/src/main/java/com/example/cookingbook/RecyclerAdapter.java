@@ -3,6 +3,8 @@ package com.example.cookingbook;
 
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,14 +19,18 @@ import com.example.cookingbook.models.Food;
 
 import java.util.ArrayList;
 
-public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecylerViewHolder> {
+import static androidx.core.content.ContextCompat.startActivity;
+
+public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.RecylerViewHolder>  {
     private Activity mActivity;
     private ArrayList<Food> danhsach;
+    private Context context;
 
 
-    public RecyclerAdapter(Activity mActivity, ArrayList<Food> danhsach) {
+    public RecyclerAdapter(Activity mActivity, ArrayList<Food> danhsach,Context context) {
         this.mActivity = mActivity;
         this.danhsach = danhsach;
+        this.context = context;
     }
     @NonNull
     @Override
@@ -34,11 +40,21 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recyle
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapter.RecylerViewHolder holder, int position) {
-        holder.link.setText(danhsach.get(position).getLink());
+    public void onBindViewHolder(@NonNull RecyclerAdapter.RecylerViewHolder holder, final int position) {
+        holder.link.setText(danhsach.get(position).getName());
         holder.link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+            }
+        });
+        holder.imgView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "You clicked an item", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, Main2Activity.class);
+                intent.putExtra("ID", position);
+                context.startActivity(intent);
 
             }
         });
