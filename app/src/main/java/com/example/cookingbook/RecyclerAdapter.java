@@ -45,17 +45,20 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recyle
         holder.link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Toast.makeText(context, "You clicked an item", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(context, Main2Activity.class);
+                intent.putExtra("ID", position);
+                context.startActivity(intent);
             }
         });
         holder.imgView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 Toast.makeText(context, "You clicked an item", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(context, Main2Activity.class);
+                Intent intent = new Intent(context, Main3Activity.class);
                 intent.putExtra("ID", position);
                 context.startActivity(intent);
-
             }
         });
     }
