@@ -42,6 +42,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recyle
     @Override
     public void onBindViewHolder(@NonNull RecyclerAdapter.RecylerViewHolder holder, final int position) {
         holder.link.setText(danhsach.get(position).getName());
+        holder.imgView.setImageResource(danhsach.get(position).getPhoto());
         holder.link.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
