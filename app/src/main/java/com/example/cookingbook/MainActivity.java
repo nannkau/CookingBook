@@ -27,9 +27,9 @@ public class MainActivity extends AppCompatActivity {
         Food f2= new Food(R.drawable.pic_2,"https://www.foodnetwork.com/recipes","Food Network ");
         Food f3= new Food(R.drawable.pic_3,"http://www.recipe.com/","Recipe.com ");
         Food f4= new Food(R.drawable.pic_4,"https://www.bettycrocker.com/recipes","Betty Crocker TM ");
-        Food f5= new Food(R.drawable.pic_4,"https://www.bettycrocker.com/recipes","Simply Recipes ");
-        Food f6= new Food(R.drawable.pic_4,"http://www.thekitchn.com/ ","The Kitchn ");
-        Food f7= new Food(R.drawable.pic_4,"http://www.gimmesomeoven.com/ ","Give Me Some Oven ");
+        Food f5= new Food(R.drawable.pic_5,"https://www.bettycrocker.com/recipes","Simply Recipes ");
+        Food f6= new Food(R.drawable.pic_6,"http://www.thekitchn.com/ ","The Kitchn ");
+        Food f7= new Food(R.drawable.pic_7,"http://www.gimmesomeoven.com/ ","Give Me Some Oven ");
         foods.add(f1);
         foods.add(f2);
         foods.add(f3);
